@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Bismillah, FleurDivider, InstagramIcon, Lily, Swash } from './Ornaments';
 import { Countdown } from './Countdown';
@@ -59,7 +60,11 @@ export function Invitation({ revealed }: { revealed: boolean }) {
 
             <div className="mt-6">
               <p aria-hidden="true">
-                <span className={nameClass}>Sayyid Ahmed Mushthaq</span>
+                <span
+                  className={`${nameClass} ${revealed ? 'shimmer' : ''}`}
+                  style={{ '--shimmer-delay': '1.9s' } as CSSProperties}>
+                  Sayyid Ahmed Mushthaq
+                </span>
               </p>
               <p className="mt-3 font-serif text-[14px] leading-relaxed text-champagne/90 sm:text-[15.5px]">
                 S/o Mr. Sayyid Zainudheen Al Bukhari <span className="whitespace-nowrap">&amp; Mrs. Rahmath Beevi</span>
@@ -74,7 +79,11 @@ export function Invitation({ revealed }: { revealed: boolean }) {
 
             <div>
               <p aria-hidden="true">
-                <span className={nameClass}>Fathima Sana</span>
+                <span
+                  className={`${nameClass} ${revealed ? 'shimmer' : ''}`}
+                  style={{ '--shimmer-delay': '2.3s' } as CSSProperties}>
+                  Fathima Sana
+                </span>
               </p>
               <p className="mt-3 font-serif text-[14px] leading-relaxed text-champagne/90 sm:text-[15.5px]">
                 D/o Mr. Ramees P. K. &amp; Mrs. Sajna P.

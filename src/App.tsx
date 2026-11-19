@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Invitation } from './components/Invitation';
 import { Curtain } from './components/Curtain';
+import { FallingPetals } from './components/FallingPetals';
 import { BackgroundMusic } from './components/BackgroundMusic';
 import { useYouTubeAudio } from './hooks/useYouTubeAudio';
 
@@ -14,6 +15,7 @@ type Stage = 'closed' | 'opening' | 'open';
 export function App() {
   const [stage, setStage] = useState<Stage>('closed');
   const music = useYouTubeAudio(SONG_VIDEO_ID, SONG_START_SECONDS);
+  const reduce = useReducedMotion();
 
   // Keep the page still while the curtain is drawn
   useEffect(() => {
@@ -36,6 +38,9 @@ export function App() {
       )}
 
       <Invitation revealed={stage !== 'closed'} />
+
+      {/* Petals are released as the curtains part */}
+      {stage !== 'closed' && !reduce && <FallingPetals />}
 
       <AnimatePresence>
         {stage !== 'open' && (
