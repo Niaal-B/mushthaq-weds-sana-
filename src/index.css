@@ -1,5 +1,5 @@
 /* Fonts (must stay above the Tailwind imports) */
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=DM+Sans:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -25,29 +25,6 @@ body {
   font-variant-numeric: lining-nums;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
-}
-
-/*
- * Burgundy velvet: a dark base, broad diagonal drapes like the reference,
- * and a fine noise layer for the pile.
- */
-.velvet {
-  background-color: #2e0e13;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.25 0 0 0 0 0.3 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    linear-gradient(115deg,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(110, 40, 50, 0.22) 9%,
-      rgba(0, 0, 0, 0.3) 17%,
-      rgba(0, 0, 0, 0) 26%,
-      rgba(120, 45, 55, 0.25) 34%,
-      rgba(0, 0, 0, 0.4) 44%,
-      rgba(90, 30, 40, 0.18) 55%,
-      rgba(0, 0, 0, 0.32) 64%,
-      rgba(125, 48, 58, 0.24) 74%,
-      rgba(0, 0, 0, 0.38) 85%,
-      rgba(95, 32, 42, 0.2) 100%),
-    radial-gradient(ellipse at 30% 20%, #4a1a22 0%, #2a0b10 70%);
 }
 
 /* Cream card-stock paper the arch sits on, with a soft mottle */
@@ -166,22 +143,22 @@ body {
   }
 }
 
-/* Vertical curtain folds, layered over .velvet */
-.curtain-folds {
-  background-image:
-    repeating-linear-gradient(90deg,
-      rgba(0, 0, 0, 0.42) 0px,
-      rgba(0, 0, 0, 0.12) 14px,
-      rgba(140, 55, 66, 0.28) 34px,
-      rgba(170, 75, 86, 0.16) 44px,
-      rgba(0, 0, 0, 0.1) 62px,
-      rgba(0, 0, 0, 0.42) 84px);
+/* Slow ring of light around the Open Invitation button, inviting a tap */
+.invite-glow {
+  animation: invite-glow 2.6s ease-out 1.6s infinite;
 }
 
-/* Warm cream paper; flat so the body matches the SVG crests exactly */
-.paper {
-  background-color: #ede4d7;
+@keyframes invite-glow {
+  0% {
+    box-shadow: 0 12px 28px -12px rgba(70, 20, 25, 0.7), 0 0 0 0 rgba(176, 138, 74, 0.5);
+  }
+  70%,
+  100% {
+    box-shadow: 0 12px 28px -12px rgba(70, 20, 25, 0.7), 0 0 0 14px rgba(176, 138, 74, 0);
+  }
 }
+
+
 
 .label {
   font-family: Lora, Georgia, serif;

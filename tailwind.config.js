@@ -18,6 +18,7 @@ export default {
         display: ['"Playfair Display"', 'Georgia', 'serif'],
         serif: ['Lora', 'Georgia', 'serif'],
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        quran: ['"Amiri Quran"', 'Amiri', 'serif'],
         arabic: ['Amiri', '"Noto Naskh Arabic"', 'serif'],
       },
     },

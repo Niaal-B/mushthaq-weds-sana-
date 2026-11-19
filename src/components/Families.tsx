@@ -1,12 +1,15 @@
 import { Reveal, SectionHeading } from './Section';
 
-type FamilyProps = { label: string; father: string; mother: string; home: string };
+type FamilyProps = { label: string; father: string; fatherTitle?: string; mother: string; home: string };
 
-function Family({ label, father, mother, home }: FamilyProps) {
+function Family({ label, father, fatherTitle, mother, home }: FamilyProps) {
   return (
     <div className="text-center">
       <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-[#8a6a3a]">{label}</p>
       <p className="mt-3 text-balance font-display text-[clamp(1.2rem,5vw,1.5rem)] leading-[1.35] text-[#5e1a22]">{father}</p>
+      {fatherTitle && (
+        <p className="mt-0.5 font-serif text-[clamp(0.92rem,3.8vw,1.02rem)] italic text-[#8a6a3a]">{fatherTitle}</p>
+      )}
       <p className="font-display text-[1.3rem] italic leading-[1.5] text-[#9c763f]">&amp;</p>
       <p className="font-display text-[clamp(1.2rem,5vw,1.5rem)] leading-[1.35] text-[#5e1a22]">{mother}</p>
       <p className="mt-3 font-serif text-[clamp(0.92rem,3.8vw,1.02rem)] italic text-[#6b4a35]">{home}</p>
@@ -25,6 +28,7 @@ export function Families() {
         <Family
           label="Groom's Parents"
           father="Mr. Sayyid Zainudheen Al Bukhari"
+          fatherTitle="(Koorikkuzhi Thangal)"
           mother="Mrs. Rahmath Beevi"
           home="Kamaliyya House, Kaipamangalam, Thrissur"
         />

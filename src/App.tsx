@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Invitation } from './components/Invitation';
-import { Curtain } from './components/Curtain';
+import { Entrance } from './components/Entrance';
 import { FallingPetals } from './components/FallingPetals';
 import { BackgroundMusic } from './components/BackgroundMusic';
 import { useYouTubeAudio } from './hooks/useYouTubeAudio';
@@ -39,12 +39,12 @@ export function App() {
 
       <Invitation revealed={stage !== 'closed'} />
 
-      {/* Petals are released as the curtains part */}
+      {/* Petals are released as the doors open */}
       {stage !== 'closed' && !reduce && <FallingPetals />}
 
       <AnimatePresence>
         {stage !== 'open' && (
-          <Curtain
+          <Entrance
             onOpenStart={() => {
               music.play();
               setStage('opening');

@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Bismillah, FleurDivider, InstagramIcon, Lily, Swash } from './Ornaments';
+import { Ayah } from './Ayah';
 import { Countdown } from './Countdown';
 import { Events } from './Events';
 import { Venue } from './Venue';
@@ -69,6 +70,9 @@ export function Invitation({ revealed }: { revealed: boolean }) {
               <p className="mt-3 font-serif text-[14px] leading-relaxed text-champagne/90 sm:text-[15.5px]">
                 S/o Mr. Sayyid Zainudheen Al Bukhari <span className="whitespace-nowrap">&amp; Mrs. Rahmath Beevi</span>
               </p>
+              <p className="mt-0.5 font-serif text-[13.5px] italic tracking-wide text-champagne/80 sm:text-[14.5px]">
+                (Koorikkuzhi Thangal)
+              </p>
             </div>
 
             <div className="my-4 flex items-center justify-center gap-2" aria-hidden="true">
@@ -104,6 +108,7 @@ export function Invitation({ revealed }: { revealed: boolean }) {
       </header>
 
       <main>
+        <Ayah />
         <Countdown />
         <Events />
         <Venue />
