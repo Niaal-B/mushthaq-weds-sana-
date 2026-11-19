@@ -11,9 +11,11 @@ export default {
         gold: '#b08a4a',
         goldlight: '#d9bd84',
         cream: '#ede4d7',
+        parchment: '#e9e0d1',
+        champagne: '#e4c99c',
       },
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
         serif: ['Lora', 'Georgia', 'serif'],
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
         arabic: ['Amiri', '"Noto Naskh Arabic"', 'serif'],

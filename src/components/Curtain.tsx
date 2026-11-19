@@ -90,7 +90,7 @@ export function Curtain({ onOpenStart, onOpened }: CurtainProps) {
         />
 
         <p className="label mt-3 text-center text-[10px] text-goldlight/80 sm:text-[11px]">The Wedding Reception of</p>
-        <p className="mt-2 text-center font-display text-[clamp(1.35rem,5.8vw,1.75rem)] font-medium leading-tight text-cream">
+        <p className="mt-2 text-center font-display text-[clamp(1.25rem,5.4vw,1.6rem)] leading-snug text-cream">
           <span className="block">Sayyid Ahmed Mushthaq</span>
           <span className="block italic text-goldlight">&amp;</span>
           <span className="block">Fathima Sana</span>

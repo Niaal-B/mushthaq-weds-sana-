@@ -1,13 +1,23 @@
 /* Fonts (must stay above the Tailwind imports) */
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html,
 body {
-  background-color: #22090d;
+  background-color: #e9e0d1;
   overflow-x: hidden;
 }
 
@@ -38,6 +48,37 @@ body {
       rgba(0, 0, 0, 0.38) 85%,
       rgba(95, 32, 42, 0.2) 100%),
     radial-gradient(ellipse at 30% 20%, #4a1a22 0%, #2a0b10 70%);
+}
+
+/* Cream card-stock paper the arch sits on, with a soft mottle */
+.parchment {
+  background-color: #e9e0d1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.34 0 0 0 0 0.24 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(150, 120, 80, 0.12), transparent 60%);
+}
+
+/* Smooth burgundy velvet for the arch (no drapes, gentle mottled sheen) */
+.velvet-arch {
+  background-color: #4a141b;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.3 0 0 0 0 0.32 0 0 0 0.14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 30% 18%, rgba(130, 45, 55, 0.45), transparent 55%),
+    radial-gradient(ellipse at 75% 60%, rgba(110, 35, 45, 0.3), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(20, 3, 6, 0.45), transparent 60%);
+}
+
+/* Champagne-gold lettering, lit from above; each wrapped line gets its own gradient */
+.gold-ink {
+  display: inline;
+  padding: 0 0.22em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-image: linear-gradient(180deg, #f8e7c6 0%, #e2c08a 45%, #b98c52 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Vertical curtain folds, layered over .velvet */

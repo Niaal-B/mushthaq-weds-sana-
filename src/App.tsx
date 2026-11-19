@@ -21,9 +21,9 @@ export function App() {
   }, [stage]);
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* Positioned layers paint in DOM order, so the invitation (relative) sits above this */}
-      <div aria-hidden="true" className="velvet fixed inset-0" />
+      <div aria-hidden="true" className="parchment fixed inset-0" />
 
       {SONG_VIDEO_ID && (
         <BackgroundMusic
@@ -48,6 +48,6 @@ export function App() {
           />
         )}
       </AnimatePresence>
-    </main>
+    </div>
   );
 }
