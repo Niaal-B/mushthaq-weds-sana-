@@ -1,4 +1,3 @@
-import { FleurDivider } from './Ornaments';
 import { Reveal } from './Section';
 
 // Surah Ar-Rum 30:21. Uthmani text and Sahih International translation (via api.alquran.cloud)
@@ -20,32 +19,30 @@ function Star({ className = '' }: { className?: string }) {
 
 export function Ayah() {
   return (
-    <section aria-label="Surah Ar-Rum, verse 21" className="px-4 pb-16 pt-4 sm:pb-24">
-      <Reveal className="relative mx-auto max-w-[640px]">
-        {/* Manuscript-style frame: fine double gold rule with star ornaments */}
-        <div className="relative border border-[#a8834d]/70 px-[7%] pb-12 pt-14 text-center sm:px-14">
-          <span aria-hidden="true" className="pointer-events-none absolute inset-[6px] border border-[#a8834d]/35" />
-          <Star className="absolute -left-[10px] -top-[10px] h-5 w-5" />
-          <Star className="absolute -right-[10px] -top-[10px] h-5 w-5" />
-          <Star className="absolute -bottom-[10px] -left-[10px] h-5 w-5" />
-          <Star className="absolute -bottom-[10px] -right-[10px] h-5 w-5" />
-          <span aria-hidden="true" className="absolute -top-[17px] left-1/2 -translate-x-1/2">
-            <Star className="h-8 w-8" />
-          </span>
+    <aside aria-label="Surah Ar-Rum, verse 21" className="px-4 py-5 sm:py-6">
+      <Reveal className="mx-auto max-w-[480px]">
+        {/* Compact illumination card: subtle gold hairline with miniature star */}
+        <div className="relative rounded-2xl border border-[#a8834d]/30 bg-[#f7f2ea]/75 px-5 py-4 text-center shadow-[0_8px_24px_-12px_rgba(70,20,25,0.12)] backdrop-blur-[2px] sm:px-7 sm:py-5">
+          <div className="mx-auto mb-2 flex items-center justify-center gap-2" aria-hidden="true">
+            <span className="h-px w-6 bg-[#a8834d]/40" />
+            <Star className="h-3.5 w-3.5" />
+            <span className="h-px w-6 bg-[#a8834d]/40" />
+          </div>
 
           {/* Ornate Quranic brackets enclose the verse */}
-          <p lang="ar" dir="rtl" className="font-quran text-[clamp(1.35rem,5.6vw,1.95rem)] leading-[2.15] text-[#4a141b]">
+          <p lang="ar" dir="rtl" className="font-quran text-[13.5px] leading-[1.9] text-[#4a141b] sm:text-[15px]">
             {'﴿'}{AYAH_AR}{'﴾'}
           </p>
 
-          <FleurDivider tone="dark" className="mt-6" />
-
-          <p className="mx-auto mt-5 max-w-[42ch] text-balance font-serif text-[clamp(0.98rem,4vw,1.1rem)] italic leading-[1.8] text-[#4f3a2c]">
+          <p className="mx-auto mt-2 max-w-[42ch] text-balance font-serif text-[11.5px] italic leading-relaxed text-[#5a4537] sm:text-[12.5px]">
             {AYAH_EN}
           </p>
-          <p className="mt-5 font-sans text-[11px] uppercase tracking-[0.24em] text-[#8a6a3a]">Surah Ar-Rum · 30:21</p>
+
+          <p className="mt-2 font-sans text-[9.5px] uppercase tracking-[0.24em] text-[#8a6a3a]">
+            Surah Ar-Rum · 30:21
+          </p>
         </div>
       </Reveal>
-    </section>
+    </aside>
   );
 }

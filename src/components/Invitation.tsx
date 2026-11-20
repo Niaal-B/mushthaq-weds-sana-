@@ -68,10 +68,13 @@ export function Invitation({ revealed }: { revealed: boolean }) {
                 </span>
               </p>
               <p className="mt-3 font-serif text-[14px] leading-relaxed text-champagne/90 sm:text-[15.5px]">
-                S/o Mr. Sayyid Zainudheen Al Bukhari <span className="whitespace-nowrap">&amp; Mrs. Rahmath Beevi</span>
+                S/o Mr. Sayyid Zainudheen Al Bukhari
               </p>
               <p className="mt-0.5 font-serif text-[13.5px] italic tracking-wide text-champagne/80 sm:text-[14.5px]">
                 (Koorikkuzhi Thangal)
+              </p>
+              <p className="mt-0.5 font-serif text-[14px] leading-relaxed text-champagne/90 sm:text-[15.5px]">
+                &amp; Mrs. Rahmath Beevi
               </p>
             </div>
 
