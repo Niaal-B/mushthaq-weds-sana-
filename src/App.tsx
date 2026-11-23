@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, useReducedMotion } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import { Invitation } from './components/Invitation';
 import { Entrance } from './components/Entrance';
 import { FallingPetals } from './components/FallingPetals';
@@ -53,6 +54,8 @@ export function App() {
           />
         )}
       </AnimatePresence>
+
+      <Analytics />
     </div>
   );
 }
